@@ -102,7 +102,7 @@ main section {
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1520256862855-398228c41684?auto=format&fit=crop&w=1600&q=80')
+  background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80')
              no-repeat center/cover;
   position: relative;
   min-height: 80vh;
