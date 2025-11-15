@@ -103,11 +103,9 @@ main section {
 
 .hero {
   background: url('banner.jpg') no-repeat center/cover;
-  position: relative;
   min-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 }
 .hero::before {
   content: "";
