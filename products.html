@@ -1,152 +1,418 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products | The Hospitality Hub</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+/* ---------- Global reset & base ---------- */
 
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">THE <span>HOSPITALITY</span> HUB</div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="about.html">About</a>
-          <a href="catalogue.html">Catalogue</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <button class="btn-gold" onclick="location.href='https://wa.me/919304676700'">Enquiry</button>
-      </nav>
-    </div>
-  </header>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
 
-<main>
-  <section class="container">
-    <h2 class="section-title">Product Categories</h2>
-    <p class="section-sub">
-      A quick overview of our core categories. You can use this page later to add item-wise details and pricing.
-    </p>
+:root {
+  --gold: #d4af37;
+  --gold-soft: #f2d77d;
+  --dark: #050509;
+  --card-bg: rgba(255,255,255,0.04);
+}
 
-    <div class="grid">
-      <!-- Hotelware -->
-      <div class="card">
-        <img src="hotelware.jpg" alt="Hotelware" />
-        <h3>Hotelware</h3>
-        <p>Plates, bowls, platters, cutlery, service ware and buffet display items.</p>
-        <ul>
-          <li>Porcelain &amp; melamine plates</li>
-          <li>Serving bowls &amp; quarter plates</li>
-          <li>Cutlery &amp; table accessories</li>
-        </ul>
-      </div>
+body {
+  background: radial-gradient(circle at top, #171717 0, #050509 55%);
+  color: #f9fafb;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+}
 
-      <!-- Kitchenware -->
-      <div class="card">
-        <img src="kitchenware.jpg" alt="Kitchenware" />
-        <h3>Kitchenware</h3>
-        <p>Commercial kitchen tools and cooking equipment for everyday operations.</p>
-        <ul>
-          <li>Cookware, pans &amp; pots</li>
-          <li>Chopping boards, ladles, spatulas</li>
-          <li>Storage containers &amp; GN pans</li>
-        </ul>
-      </div>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-      <!-- Melamine -->
-      <div class="card">
-        <img src="melamine.jpg" alt="Melamine utensils" />
-        <h3>Melamine Utensils</h3>
-        <p>In-house manufactured melamine ideal for catering, hotel &amp; restaurant use.</p>
-        <ul>
-          <li>Dinner sets &amp; compartment plates</li>
-          <li>Bowls, trays &amp; snack platters</li>
-          <li>Custom designs (MOQ based)</li>
-        </ul>
-      </div>
+img {
+  max-width: 100%;
+  display: block;
+}
 
-      <!-- Glassware -->
-      <div class="card">
-        <img src="glassware.jpg" alt="Glassware" />
-        <h3>Glassware</h3>
-        <p>Glass options for water, juice and beverages for all types of outlets.</p>
-        <ul>
-          <li>Water &amp; juice glasses</li>
-          <li>Tumblers &amp; speciality glasses</li>
-          <li>Ideal for hotels, cafés &amp; bars</li>
-        </ul>
-      </div>
+button {
+  font-family: inherit;
+}
 
-      <!-- Buffetware -->
-      <div class="card">
-        <img src="buffetware.jpg" alt="Buffetware" />
-        <h3>Buffetware</h3>
-        <p>Equipment and serving solutions for buffet &amp; catering service.</p>
-        <ul>
-          <li>Chafing dishes &amp; hot cases</li>
-          <li>Gastronorm pans &amp; stands</li>
-          <li>Serving spoons &amp; ladles</li>
-        </ul>
-      </div>
+/* ---------- Header & navigation ---------- */
 
-      <!-- Cutlery -->
-      <div class="card">
-        <img src="cutlery.jpg" alt="Cutlery" />
-        <h3>Cutlery</h3>
-        <p>Durable stainless-steel cutlery for hotel &amp; restaurant use.</p>
-        <ul>
-          <li>Forks, knives &amp; spoons</li>
-          <li>Service &amp; dessert cutlery</li>
-          <li>Premium &amp; economy ranges</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(5,5,9,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-  <section class="container" id="featured">
-    <h2 class="section-title">Featured Products</h2>
-    <p class="section-sub">Use this area to highlight popular or new arrivals.</p>
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
 
-    <div class="grid">
-      <!-- Featured: Melamine Dinner Set -->
-      <div class="card">
-        <img src="dinnerset.jpg" alt="Melamine dinner set" />
-        <h3>Melamine Dinner Set</h3>
-        <p>Heavy-duty dinner set suitable for restaurant and catering service.</p>
-        <button class="btn-gold" style="margin-top:8px;width:100%;"
-          onclick="location.href='https://wa.me/919304676700'">Enquiry on WhatsApp</button>
-      </div>
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
 
-      <!-- Featured: Glassware Combo -->
-      <div class="card">
-        <img src="glassware.jpg" alt="Glassware combo" />
-        <h3>Glassware Combo Packs</h3>
-        <p>Combination packs for hotels and bars looking for a quick start set.</p>
-        <button class="btn-gold" style="margin-top:8px;width:100%;"
-          onclick="location.href='https://wa.me/919304676700'">Enquiry on WhatsApp</button>
-      </div>
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: var(--gold);
+}
 
-      <!-- Featured: Cookware Set -->
-      <div class="card">
-        <img src="kitchenware.jpg" alt="Cookware set" />
-        <h3>Stainless Steel Cookware</h3>
-        <p>Commercial-grade cookware that can handle continuous use.</p>
-        <button class="btn-gold" style="margin-top:8px;width:100%;"
-          onclick="location.href='https://wa.me/919304676700'">Enquiry on WhatsApp</button>
-      </div>
-    </div>
-  </section>
-</main>
+.logo span {
+  color: #f9fafb;
+}
 
-  <footer>
-    © 2025 The Hospitality Hub, Patna. All rights reserved.
-  </footer>
-  <a href="https://wa.me/919304676700" target="_blank" rel="noopener" class="whatsapp-float">
-    <span>💬</span> WhatsApp Enquiry
-  </a>
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 0.95rem;
+}
 
-</body>
-</html>
+.nav-links a {
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #e5e7eb;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(212,175,55,0.12);
+  color: var(--gold-soft);
+}
+
+/* ---------- Buttons ---------- */
+
+.btn-gold {
+  background: linear-gradient(135deg, #facc6b, #d4af37);
+  color: #111827;
+  border-radius: 999px;
+  padding: 8px 18px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.55);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.btn-gold:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.75);
+}
+
+/* ---------- Layout ---------- */
+
+main section {
+  padding: 55px 0;
+}
+
+/* ---------- Hero section ---------- */
+
+.hero {
+  position: relative;
+  background: url('banner.jpg') no-repeat center/cover;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(0,0,0,0.08), rgba(0,0,0,0.8));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  color: var(--gold-soft);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--gold-soft);
+  text-shadow: 0 14px 35px rgba(0,0,0,0.9);
+}
+
+.hero-text {
+  font-size: 1rem;
+  color: #e5e7eb;
+  margin-bottom: 16px;
+  max-width: 480px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hero-meta {
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+.hero-panel {
+  background: rgba(0,0,0,0.82);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(212,175,55,0.5);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.95);
+}
+
+.hero-panel h3 {
+  font-size: 0.95rem;
+  color: var(--gold-soft);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.hero-tag {
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: rgba(17,24,39,0.96);
+  border: 1px solid rgba(148,163,184,0.5);
+  font-size: 0.83rem;
+}
+
+.hero-tag strong {
+  color: #e5e7eb;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* ---------- Sections & cards ---------- */
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--gold-soft);
+  margin-bottom: 8px;
+}
+
+.section-sub {
+  text-align: center;
+  color: #9ca3af;
+  max-width: 650px;
+  margin: 0 auto 32px;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid rgba(148,163,184,0.45);
+  padding: 16px 16px 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 24px 65px rgba(0,0,0,0.9);
+  background: rgba(15,23,42,0.9);
+}
+
+/* ✅ All product / featured images same size & premium crop */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1.05rem;
+  color: var(--gold-soft);
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.87rem;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.card ul {
+  padding-left: 18px;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+}
+
+/* small pill list */
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  background: rgba(15,23,42,0.9);
+  border: 1px solid rgba(148,163,184,0.7);
+  color: #e5e7eb;
+}
+
+/* ---------- Contact page ---------- */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.contact-box {
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid rgba(148,163,184,0.5);
+  padding: 18px 18px 20px;
+}
+
+.contact-box p {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+  margin-bottom: 6px;
+}
+
+.contact-box strong {
+  color: var(--gold-soft);
+}
+
+form label {
+  font-size: 0.8rem;
+  color: #e5e7eb;
+  display: block;
+  margin-bottom: 4px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border-radius: 10px;
+  background: rgba(15,23,42,0.95);
+  color: #f9fafb;
+  border: 1px solid rgba(148,163,184,0.7);
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+
+form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 22px 0 26px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  border-top: 1px solid rgba(148,163,184,0.4);
+  margin-top: 24px;
+}
+
+/* ---------- Floating WhatsApp ---------- */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background: #22c55e;
+  color: #f9fafb;
+  padding: 10px 14px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  z-index: 60;
+}
+
+.whatsapp-float span {
+  font-size: 1.1rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .hero-inner {
+    grid-template-columns: minmax(0,1fr);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(0,1fr);
+  }
+}
