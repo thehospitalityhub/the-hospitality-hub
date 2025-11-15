@@ -102,14 +102,13 @@ main section {
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=80')
-             no-repeat center/cover;
+  background: url('banner.jpg') no-repeat center/cover;
   position: relative;
-  min-height: 80vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
-
 .hero::before {
   content: "";
   position: absolute;
