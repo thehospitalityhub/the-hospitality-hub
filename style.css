@@ -214,3 +214,9 @@ footer {
 @media (max-width: 800px) {
   .nav-links { display: none; }
 }
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 12px;
+}
