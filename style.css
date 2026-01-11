@@ -1,52 +1,42 @@
-/* -----------------------------------
-   Global Reset & Base
------------------------------------ */
+/* ---------- Global ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
 :root {
   --gold: #d4af37;
   --gold-soft: #f2d77d;
   --dark: #050509;
-  --card-bg: rgba(255,255,255,0.05);
+  --card-bg: rgba(255,255,255,0.06);
 }
 
 body {
   background: radial-gradient(circle at top, #171717 0%, #050509 60%);
   color: #f9fafb;
-  min-height: 100vh;
-  line-height: 1.5;
 }
 
-/* -----------------------------------
-   Layout
------------------------------------ */
+/* ---------- Layout ---------- */
 .container {
   width: 92%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 img {
   width: 100%;
   display: block;
   border-radius: 12px;
-  object-fit: cover;
 }
 
-/* -----------------------------------
-   Navigation
------------------------------------ */
+/* ---------- Header ---------- */
 header {
   position: sticky;
   top: 0;
-  background: rgba(5,5,9,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(5,5,9,0.95);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   z-index: 50;
 }
 
@@ -60,14 +50,10 @@ nav {
 .logo {
   font-weight: 800;
   letter-spacing: 0.18em;
-  font-size: 1.1rem;
-  text-transform: uppercase;
   color: var(--gold);
 }
 
-.logo span {
-  color: #fff;
-}
+.logo span { color: #fff; }
 
 .nav-links {
   display: flex;
@@ -75,10 +61,10 @@ nav {
 }
 
 .nav-links a {
-  padding: 6px 12px;
   color: #ddd;
+  text-decoration: none;
+  padding: 6px 12px;
   border-radius: 999px;
-  transition: 0.25s;
 }
 
 .nav-links a:hover {
@@ -86,28 +72,19 @@ nav {
   color: var(--gold);
 }
 
-/* -----------------------------------
-   Buttons
------------------------------------ */
+/* ---------- Button ---------- */
 .btn-gold {
   background: linear-gradient(135deg, #f8d66c, #d4af37);
-  padding: 8px 18px;
-  border-radius: 999px;
   border: none;
-  cursor: pointer;
+  padding: 9px 18px;
+  border-radius: 999px;
   font-weight: 600;
+  cursor: pointer;
   color: #111;
-  transition: 0.3s;
 }
 
-.btn-gold:hover {
-  filter: brightness(1.06);
-}
-
-/* -----------------------------------
-   Sections
------------------------------------ */
-main section {
+/* ---------- Sections ---------- */
+section {
   padding: 50px 0;
 }
 
@@ -115,39 +92,32 @@ main section {
   text-align: center;
   color: var(--gold-soft);
   font-size: 2rem;
-  margin-bottom: 8px;
-  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .section-sub {
   text-align: center;
   color: #b3b3b3;
-  max-width: 600px;
-  margin: 0 auto 32px;
-  font-size: 0.95rem;
+  margin-bottom: 35px;
 }
 
-/* -----------------------------------
-   Product Grid
------------------------------------ */
+/* ---------- Grid & Cards ---------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 26px;
 }
 
 .card {
   background: var(--card-bg);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
   padding: 18px;
   border-radius: 18px;
-  box-shadow: 0 12px 35px rgba(0,0,0,0.5);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 50px rgba(0,0,0,0.7);
+  transform: translateY(-6px);
   border-color: var(--gold);
 }
 
@@ -158,65 +128,52 @@ main section {
 }
 
 .card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 6px;
   color: var(--gold-soft);
+  margin-bottom: 6px;
 }
 
 .card p {
-  font-size: 0.88rem;
-  margin-bottom: 8px;
-  color: #dcdcdc;
-}
-
-.card ul {
-  padding-left: 20px;
-  color: #d8d8d8;
-  font-size: 0.85rem;
-}
-
-/* -----------------------------------
-   Floating WhatsApp
------------------------------------ */
-.whatsapp-float {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  background: #25d366;
-  padding: 12px 16px;
-  color: #fff;
   font-size: 0.9rem;
-  border-radius: 999px;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.7);
-  z-index: 100;
+  color: #ddd;
 }
 
-/* -----------------------------------
-   Footer
------------------------------------ */
+/* ---------- Price ---------- */
+.price {
+  margin: 8px 0 12px;
+}
+
+.mrp {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 8px;
+}
+
+.sale {
+  color: var(--gold-soft);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.discount {
+  color: #25d366;
+  font-weight: 600;
+}
+
+/* ---------- Clickable Card ---------- */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ---------- Footer ---------- */
 footer {
   text-align: center;
-  padding: 25px 0;
-  margin-top: 40px;
+  padding: 25px;
   color: #bbb;
   border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 0.85rem;
 }
 
-/* -----------------------------------
-   Responsive
------------------------------------ */
+/* ---------- Mobile ---------- */
 @media (max-width: 800px) {
   .nav-links { display: none; }
-}
-.card img {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 12px;
 }
